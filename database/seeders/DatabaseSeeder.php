@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,6 +16,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\User::factory(5)->create();
 
         \App\Models\User::factory()->create([
+            'token' => Str::uuid(),
             'name' => 'Leandro Oliveira',
             'email' => 'lfoadm@icloud.com',
         ]);

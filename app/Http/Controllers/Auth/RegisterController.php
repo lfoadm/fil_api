@@ -22,7 +22,7 @@ class RegisterController extends Controller
         //MODEL JÁ VEM HASHED NA VERSÃO NOVA DO LARAVEL
             // $input['password'] = bcrypt($input['password']); 
 
-        // $input['token'] = Str::uuid();
+        $input['token'] = Str::uuid();
         $user = User::query()->create($input);
         UserRegistered::dispatch($user);
 
