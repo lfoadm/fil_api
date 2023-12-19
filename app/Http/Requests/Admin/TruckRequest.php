@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Auth;
+namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class RegisterRequest extends FormRequest
+class TruckRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,10 +22,8 @@ class RegisterRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'first_name'    => 'string|required',
-            'last_name'     => 'string',
-            'email'         => 'email|required',
-            'password'      => 'string|required',
+            'plate' => 'string|required',
+            //'tenant_id' => 'required'
         ];
     }
 }

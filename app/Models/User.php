@@ -48,6 +48,11 @@ class User extends Authenticatable
         return $this->hasMany(UserPasswordResetToken::class);
     }
 
+    public function tenant()
+    {
+        return $this->belongsTo(Tenant::class);
+    }
+
     // public function stripeName()
     // {
     //     return $this->first_name;

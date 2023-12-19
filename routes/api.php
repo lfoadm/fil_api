@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\TruckController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\PasswordForgotController;
@@ -16,7 +17,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->group(function() {
     Route::get('/me', [meController::class, 'show']);
+    Route::get('trucks', [TruckController::class, 'index']);
+    Route::post('truck', [TruckController::class, 'store']);
 });
+Route::get('tenant', [TruckController::class, 'tenant']);
 
 
 Route::post('login', LoginController::class);
